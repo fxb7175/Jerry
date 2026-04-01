@@ -1,0 +1,1196 @@
+/* Darius Dictionary Colorizer*/
+
+:root {
+    /* Change this opacity to 0% if you don't want backgrounds to change.
+     * Or increase it if you want them to change more.*/
+    --dict-color-opacity: 100%;
+    --dict-color: var(--tag-dictionary-background-color);
+    --dict-bg-opacity: 0;
+    --collapsible-definition-line-count: 1;
+  }
+  
+  .tag-label-content {
+    font-family: "Klee One SemiBold";
+ }
+
+  .definition-item {
+    background-color: color-mix(
+      in srgb,
+      var(--dict-color) calc(var(--dict-bg-opacity) * var(--dict-color-opacity)),
+      var(--background-color)
+    );
+    --tag-dictionary-background-color: var(--dict-color);
+  }
+  
+  /* Additional Japanese Dicts */
+  
+  .definition-item[data-dictionary^="TMW Club v2"] {
+    --dict-color: rgb(206, 252, 133);
+    --dict-bg-opacity: 0.06;
+    --tag-text-color: black;
+  }
+.definition-item[data-dictionary^="用例.jp"],
+  .definition-item[data-dictionary^="ウェブ検索"] {
+    --dict-color: rgb(123, 204, 255);
+    --dict-bg-opacity: 0.06;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="sukkiri.jp"],
+  .definition-item[data-dictionary^="コトバの意味辞典"],
+  .definition-item[data-dictionary^="ネット用語辞典「ネット王子」"],
+  .definition-item[data-dictionary^="形容詞・動詞のイラスト素材辞典"],
+  .definition-item[data-dictionary^="熟語図鑑"] {
+    --dict-color: rgb(123, 153, 255);
+    --dict-bg-opacity: 0.06;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="[画像付き] 絵でわかる日本語"] {
+    --dict-color: rgb(204, 123, 255);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  
+  .definition-item[data-dictionary^="違い・語源辞典オンライン"],
+  .definition-item[data-dictionary^="語彙力・熟語の百科事典"],
+  .definition-item[data-dictionary^="ことわざ・慣用句の百科事典"],
+  .definition-item[data-dictionary^="四字熟語の百科事典"] {
+    --dict-color: rgb(255, 204, 123);
+    --dict-bg-opacity: 0.06;
+   --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="絵でわかる慣用句"] {
+    --dict-color: rgb(123, 255, 204);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+
+  .definition-item[data-dictionary^="擬音語・擬態語辞典"],
+  .definition-item[data-dictionary^="Onomatoproject"] {
+    --dict-color: rgb(255, 153, 123);
+    --dict-bg-opacity: 0.04;
+    --tag-text-color: black;
+  }
+  
+  /* Japanese Dicts */
+  .definition-item[data-dictionary^="旺文社 全訳古語辞典"],
+  .definition-item[data-dictionary^="旺文社国語辞典"] {
+    --dict-color: rgb(187, 255, 255);
+    --dict-bg-opacity: 0.06;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="明鏡国語辞典"] {
+    --dict-color: rgb(51, 51, 221);
+    --dict-bg-opacity: 0.03;
+  }
+  .definition-item[data-dictionary^="岩波国語辞"] {
+    --dict-color: rgb(51, 85, 51);
+    --dict-bg-opacity: 0.05;
+  }
+  .definition-item[data-dictionary*="新明解"] {
+    --dict-color: rgb(255, 0, 0);
+    --dict-bg-opacity: 0.025;
+  }
+  .definition-item[data-dictionary^="大辞林"] {
+    --dict-color: rgb(85, 34, 85);
+    --dict-bg-opacity: 0.03;
+  }
+  .definition-item[data-dictionary="大辞泉_v2"],
+  .definition-item[data-dictionary="大辞泉"],
+  .definition-item[data-dictionary="デジタル大辞泉"] {
+    --dict-color: rgb(170, 0, 0);
+    --dict-bg-opacity: 0.04;
+  }
+  .definition-item[data-dictionary="精選版　日本国語大辞典"] {
+    --dict-color: rgb(238, 238, 204);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="ハイブリッド新辞林"] {
+    --dict-color: rgb(221, 221, 238);
+    --dict-bg-opacity: 0.15;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="広辞苑"] {
+    --dict-color: rgb(51, 51, 51);
+    --dict-bg-opacity: 0.05;
+  
+  }
+  /* jitenon */
+  .definition-item[data-dictionary^="和仏辞典オフライン"],
+  .definition-item[data-dictionary$="辞典オンライン"],
+  .definition-item[data-dictionary="故事・ことわざ・慣用句オンライン"] {
+    --dict-color: rgb(255, 227, 124);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="実用日本語表現辞典"] {
+    --dict-color: rgb(99, 108, 141);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+
+ .definition-item[data-dictionary^="三省堂 全訳読解古語辞典"],
+  .definition-item[data-dictionary^="三省堂国語辞典"] {
+    --dict-color: rgb(229, 107, 57);
+    --dict-bg-opacity: 0.03;
+  }
+  .definition-item[data-dictionary^="JMdict"],
+  .definition-item[data-dictionary^="JMDict"],
+  .definition-item[data-dictionary^="JMnedict"],
+  .definition-item[data-dictionary^="Jitendex"] {
+    --dict-color: rgb(0, 132, 255);
+    --dict-bg-opacity: 0.02;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="NEW斎藤和英大辞典"] {
+    --dict-color: rgb(244, 225, 254);
+    --dict-bg-opacity: 0.15;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="新和英"] {
+    --dict-color: rgb(21, 70, 51);
+    --dict-bg-opacity: 0.03;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="Pixiv"] {
+    --dict-color: rgb(0, 151, 250);
+    --dict-bg-opacity: 0.03;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="漢字源"] {
+    --dict-color: rgb(201, 149, 93);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="日本語俗語辞書"] {
+    --dict-color: rgb(176, 4, 157);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="weblio古語辞典"] {
+    --dict-color: rgb(193, 123, 148);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="語源由来辞典"] {
+    --dict-color: rgb(206, 169, 47);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="学研 四字熟語辞典"] {
+    --dict-color: rgb(180, 192, 152);
+    --dict-bg-opacity: 0.08;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="故事ことわざの辞典"] {
+    --dict-color: rgb(117, 87, 85);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="日本語文法辞典"] {
+    --dict-color: rgb(23, 59, 173);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="JLPT文法解説まとめ"] {
+    --dict-color: rgb(244, 66, 54);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="どんなときどう使う 日本語表現文型辞典"] {
+    --dict-color: rgb(126, 168, 232);
+    --dict-bg-opacity: 0.08;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="毎日のんびり日本語教師"] {
+    --dict-color: rgb(255, 216, 228);
+    --dict-bg-opacity: 0.12;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="新選国語辞典"] {
+    --dict-color: #0073c4;
+    --dict-bg-opacity: 0.03;
+  }
+  /* goo.ne.jp */
+  .definition-item[data-dictionary="使い方の分かる 類語例解辞典"],
+  .definition-item[data-dictionary="全国方言辞典"] {
+    --dict-color: #9c4836;
+    --dict-bg-opacity: 0.03;
+  }
+  .definition-item[data-dictionary="新語時事用語辞典"] {
+    --dict-color: #6e9ac6;
+    --dict-bg-opacity: 0.07;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="漢字ペディア同訓異義"] {
+    --dict-color: #b7b7b7;
+    --dict-bg-opacity: 0.12;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary*="Wikipedia"] {
+    --dict-color: #447ff5;
+    --dict-bg-opacity: 0.03;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="漢検漢字辞典"] {
+    --dict-color: #e7a93a;
+    --dict-bg-opacity: 0.08;
+    --tag-text-color: black;
+  }
+
+  .definition-item[data-dictionary^="小学館 例解学習国語 第十二版"],
+  .definition-item[data-dictionary^="例解学習国語辞典"] {
+    --dict-color: #faa72f;
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="現代国語例解辞典"] {
+    --dict-color: #e3323a;
+    --dict-bg-opacity: 0.04;
+  }
+
+  .definition-item[data-dictionary^="現代心理学辞典"],
+  .definition-item[data-dictionary^="南山堂医学大辞典 第20版"],
+  .definition-item[data-dictionary^="きっずジャポニカ 新版"] {
+    --dict-color: #bd4c8e;
+    --dict-bg-opacity: 0.04;
+  }
+  .definition-item[data-dictionary^="有斐閣法律用語辞典 第５版"] {
+    --dict-color: #f0f8ff;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="複合語起源"] {
+    --dict-color: #b7ca48;
+    --dict-bg-opacity: 0.04;
+  }
+  .definition-item[data-dictionary*="YOJI-JUKUGO"],
+  .definition-item[data-dictionary*="四字熟語データバンク"] {
+    --dict-color: rgb(238, 177, 78);
+    --dict-bg-opacity: 0.06;
+    --tag-text-color: black;
+  }
+
+  /* Kanji Dicts */
+  /* same color as earlier jitenon */
+
+  .tag[data-category="dictionary"][data-details="漢字辞典オンライン"] {
+    --tag-color: rgb(255, 227, 124);
+    --tag-text-color: black;
+  }
+  .tag[data-category="dictionary"][data-details="JPDB Kanji"] {
+    --tag-color: #ff3e3d;
+  }
+  .tag[data-category="dictionary"][data-details="TheKanjiMap Kanji Radicals/Composition"] {
+    --tag-color: #2a94c9;
+  }
+  .tag[data-category="dictionary"][data-details*="Wiktionary"] {
+    --tag-color: #447ff5;
+  }
+  /* Same as JMdict */
+  .tag[data-category="dictionary"][data-details^="KANJIDIC"] {
+    --tag-color: rgb(0, 132, 255);
+  }
+  
+  /* Hanzi Dicts */
+  .tag[data-category="dictionary"][data-details^="CC-CEDICT"] {
+    --tag-color: rgb(32, 48, 64);
+  }
+  
+  /* Honzi Dicts */
+  .tag[data-category="dictionary"][data-details^="Words\.hk 粵典 漢字"] {
+    --tag-color: #ae1625;
+  }
+  
+  /* Pitch Accent */
+  
+  .tag[data-category="pronunciation-dictionary"][data-details="NHK"] {
+    --tag-color: #0076d0;
+  }
+  .tag[data-category="pronunciation-dictionary"][data-details^="大辞泉"] {
+    --tag-color: rgb(170, 0, 0);
+  }
+  .tag[data-category="pronunciation-dictionary"][data-details^="大辞林"] {
+    --tag-color: rgb(85, 34, 85);
+  }
+  
+  /* Mandarin Dicts */
+  
+  /* also covers Canto CEDICT */
+  .definition-item[data-dictionary*="CEDICT"] {
+    --dict-color: rgb(32, 48, 64);
+    --dict-bg-opacity: 0.05;
+  }
+  .definition-item[data-dictionary^="中日大辞典"] {
+    --dict-color: rgb(223, 72, 79);
+    --dict-bg-opacity: 0.05;
+  }
+  .definition-item[data-dictionary="漢語大詞典"] {
+    --dict-color: rgb(160, 19, 23);
+    --dict-bg-opacity: 0.05;
+  }
+  /* also 萌典国语辞典 */
+  .definition-item[data-dictionary^="萌典"] {
+    --dict-color: rgb(255, 221, 212);
+    --dict-bg-opacity: 0.12;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="兩岸詞典"] {
+    --dict-color: rgb(62, 94, 143);
+    --dict-bg-opacity: 0.05;
+  }
+  .definition-item[data-dictionary="牛津英汉汉英词典"] {
+    --dict-color: rgb(15, 58, 124);
+    --dict-bg-opacity: 0.05;
+  }
+  .definition-item[data-dictionary="五南國語活用辭典"] {
+    --dict-color: rgb(251, 150, 60);
+    --dict-bg-opacity: 0.05;
+  }
+  .definition-item[data-dictionary="譯典通英漢雙向字典"] {
+    --dict-color: rgb(172, 76, 77);
+    --dict-bg-opacity: 0.05;
+  }
+  .definition-item[data-dictionary="现代汉语规范词典"] {
+    --dict-color: rgb(232, 25, 15);
+    --dict-bg-opacity: 0.03;
+  }
+  .definition-item[data-dictionary="Wenlin ABC"] {
+    --dict-color: #ffca08;
+    --dict-bg-opacity: 0.05;
+  }
+  
+  /* Cantonese Dicts */
+  .definition-item[data-dictionary="CantoDict"] {
+    --dict-color: rgb(203, 255, 212);
+    --dict-bg-opacity: 0.1;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary^="Words\.hk"] {
+    --dict-color: #ae1625;
+    --dict-bg-opacity: 0.03;
+  }
+  .definition-item[data-dictionary="CE Wiktionary"] {
+    --dict-color: rgb(235, 206, 161);
+    --dict-bg-opacity: 0.05;
+    --tag-text-color: black;
+  }
+  .definition-item[data-dictionary="CC-Canto"] {
+    --dict-color: rgb(34, 34, 34);
+    --dict-bg-opacity: 0.03;
+  }
+  
+  /* Frequency Dicts (Also Kanji Dicts) */
+  
+  /* Japanese Frequency */
+  .frequency-group-item[data-details^="JPDB"] {
+    --tag-frequency-background-color: #ff3e3d;
+  }
+  .frequency-group-item[data-details^="Innocent"] {
+    --tag-frequency-background-color: #e82c9c;
+  }
+  .frequency-group-item[data-details="Novels"] {
+    --tag-frequency-background-color: #e537fa;
+  }
+  .frequency-group-item[data-details^="BCCWJ"] {
+    --tag-frequency-background-color: #8f27e3;
+  }
+  .frequency-group-item[data-details="CC100"] {
+    --tag-frequency-background-color: #6238fa;
+  }
+  .frequency-group-item[data-details="Conversation Corpus"] {
+    --tag-frequency-background-color: #273ce3;
+  }
+  .frequency-group-item[data-details^="青空文庫"] {
+    --tag-frequency-background-color: #3d93ff;
+  }
+  .frequency-group-item[data-details="Youtube"] {
+    --tag-frequency-background-color: #fd0101;
+  }
+  .frequency-group-item[data-details^="Wikipedia"] {
+    --tag-frequency-background-color: #447ff5;
+  }
+  .frequency-group-item[data-details^="熟字訓"] {
+    --tag-frequency-background-color: #a995e2;
+  }
+  
+  /* Mandarin Frequency */
+  .frequency-group-item[data-details="HSK"] {
+    --tag-frequency-background-color: #ff3e3d;
+  }
+  .frequency-group-item[data-details="BLCUlit"] {
+    --tag-frequency-background-color: #e82c9c;
+  }
+  .frequency-group-item[data-details="SUBTLEX-CH"] {
+    --tag-frequency-background-color: #e537fa;
+  }
+  .frequency-group-item[data-details="BLCUcoll"] {
+    --tag-frequency-background-color: #8f27e3;
+  }
+  .frequency-group-item[data-details="BLCUmixed"] {
+    --tag-frequency-background-color: #6238fa;
+  }
+  .frequency-group-item[data-details="BLCUnews"] {
+    --tag-frequency-background-color: #273ce3;
+  }
+  .frequency-group-item[data-details="BLCUsci"] {
+    --tag-frequency-background-color: #3d93ff;
+  }
+  
+  /* Cantonese Frequency */
+  .frequency-group-item[data-details^="Words\.hk"] {
+    --tag-frequency-background-color: #ae1625;
+  }
+  .frequency-group-item[data-details="Cifu Spoken"] {
+    --tag-frequency-background-color: #ff3e3d;
+  }
+  .frequency-group-item[data-details^="Cifu Written"] {
+    --tag-frequency-background-color: #e82c9c;
+  }
+
+  /* Freq Rank Dictionary Colorizer */
+
+  span.frequency-value[data-display-value="Student"] {
+      color: #B45865;
+  }
+  span.frequency-value[data-display-value="Trainee"] {
+      color: #E48586;
+  }
+  span.frequency-value[data-display-value="Debut Idol"] {
+      color: #FFB4C8;
+  }
+  span.frequency-value[data-display-value="Major Idol"] {
+      color: #E5AFEE;
+  }
+  span.frequency-value[data-display-value="Prima Idol"] {
+      color: #B5A4EC;
+  }
+  span.frequency-value[data-display-value="Divine Idol"] {
+      color: #7D84E4;
+  }
+  span.frequency-value[data-display-value="Eternal Idol"] {
+      color: #77AAEE;
+  }
+  span.frequency-group-tag:has(span[data-display-value="Student"]) {
+      --tag-color: #994450;
+  }
+  
+  span.frequency-group-tag:has(span[data-display-value="Trainee"]) {
+      --tag-color: #d85254;
+  }
+  
+  span.frequency-group-tag:has(span[data-display-value="Debut Idol"]) {
+      --tag-color: #ff6a8f;
+  }
+  
+  span.frequency-group-tag:has(span[data-display-value="Major Idol"]) {
+      --tag-color: #d275e1;
+  }
+  
+  span.frequency-group-tag:has(span[data-display-value="Prima Idol"]) {
+      --tag-color: #876be0;
+  }
+  
+  span.frequency-group-tag:has(span[data-display-value="Divine Idol"]) {
+      --tag-color: #4b54d9;
+  }
+  
+  span.frequency-group-tag:has(span[data-display-value="Eternal Idol"]) {
+      --tag-color: #4188e7;
+  }
+  span.frequency-group-tag:has(span[data-display-value="Immortal Idol"]) {
+    --tag-color: #53D9AF;
+}
+   
+.frequency-item[data-dictionary='TMW'] .frequency-value:nth-child(n+2) {
+    display: none;
+}
+  /* End Dictionary Colorizer */
+
+/* Specific lilscottishbint's Dictionaries Colorizer - Dark Mode */
+
+  /* ----------------------------- */
+  /* -- 明鏡 Dark mode colours -- */
+  /* ----------------------------- */
+
+  :root[data-theme="dark"] {
+      .definition-item[data-dictionary='明鏡国語辞典 第三版'] {
+          .gloss-sc-span[data-sc-fbox][data-sc-class="品格"] {
+              background-color: #ab5c59;
+              border-color: rgb(174, 67, 63);
+          }
+  
+          .gloss-sc-div[data-sc-class="hinkaku"] {
+              background-color: #522a29;
+          }
+  
+          .gloss-sc-span[data-sc-class="gaiji"] .gloss-image {
+              -webkit-filter: invert(90%);
+              filter: invert(90%);
+          }
+  
+          .gloss-sc-span[data-sc-zoomkanji] {
+              background-color: #533e48;
+          }
+  
+          .gloss-sc-div[data-sc-class="shikiri"] {
+              background-color: rgb(155, 88, 86);
+          }
+  
+          .gloss-sc-span[data-sc-fbox][data-sc-class="使い方"] {
+         background-color: rgb(204, 51, 51);
+         border-color: rgb(182, 62, 56);
+          }
+  
+          .gloss-sc-span[data-sc-column],
+          .gloss-sc-div[data-sc-column] {
+         border-left: solid 5px rgb(79, 48, 46);
+         border-right: solid 5px rgb(79, 48, 46);
+          }
+      }
+  }
+  
+  .definition-item[data-dictionary='明鏡国語辞典 第三版'] {
+      /* Uncomment this to disable furigana */
+      .gloss-sc-ruby[data-sc-class="full"] .gloss-sc-rt[data-sc-rt] {
+          display: none;
+      }
+      
+  }
+
+.definition-item[data-dictionary='明鏡国語辞典 第三版'] {
+    /* Uncomment this to disable furigana */
+    /*
+    .gloss-sc-ruby[data-sc-class="full"] .gloss-sc-rt[data-sc-rt] {
+	    display: none;
+    }
+    */
+
+    /* Uncomment this to show the 類語 section (Hidden by default) */
+    /*
+    div[data-sc-ruigo_items] {
+	    display: block;
+    }
+    */
+
+    [data-sc-body],
+    span[data-sc-rect],
+    span[data-sc-katsuyo],
+    span[data-sc-headword][data-sc-class="旧かな"],
+    span[data-sc-fbox0],
+    span[data-sc-fbox],
+    span[data-sc-e-m],
+    span[data-sc-em],
+    div[data-sc-class="shikiri"] div[data-sc-meaning],
+    span[data-sc-meaning][data-sc-class="columntitle"],
+    div[data-sc-meaning][data-sc-class="columntitle"],
+    span[data-sc-b],
+    a,
+    span[data-sc-bc]  {
+        font-family: "Klee One", "Hiragino Kaku Gothic ProN";
+    }
+
+    div[data-sc-example],
+    span[data-sc-fbox][data-sc-class="品格"],
+    span[data-sc-headword][data-sc-class="表記"],
+    span[data-sc-headword][data-sc-class="原綴"],
+    span[data-sc-zoomkanji] {
+        font-family: "Klee One", "Hiragino Mincho ProN";
+    }
+
+    span[data-sc-pron] {
+        font-family: "Klee One", "Doulos SIL";
+    }
+}
+
+:root[data-theme="dark"] {
+    .definition-item[data-dictionary='明鏡国語辞典 第三版'] {
+        --meikyo-white: #000000;
+        --meikyo-black: #CCCCCC;
+        --meikyo-red: #FF3333;
+        --meikyo-gray: #BBBBBB;
+        --meikyo-pink: #CC6666;
+        --meikyo-dark-red: #993333;
+        --meikyo-fbox-white: #FFFFFF;
+        --meikyo-fbox-gray: #CCCCCC;
+        --meikyo-box-gray: #663333;
+
+        .gloss-sc-span[data-sc-class="gaiji"] .gloss-image {
+            -webkit-filter: invert(90%);
+            filter: invert(90%);
+        }
+    }
+}
+  
+  /* ----------------------------- */
+  /* -- 大辞泉 Dark mode colours -- */
+  /* ----------------------------- */
+
+  :root[data-theme="dark"] {
+      .definition-item[data-dictionary='大辞泉'] {
+          --daijisen-black: #FFFFFF;
+          --daijisen-white: #000000;
+          --daijisen-blue: #00AAFF;
+          --daijisen-header-djs: #A0484F;
+          --daijisen-header-djsp: #7A7A7A;
+          --daijisen-header-text: #000000;
+          --daijisen-logo-color: #DDDDDD;
+          --daijisen-background-l3: #C0C0C0;
+          --daijisen-accent-mark: #FF6666;
+          --daijisen-accent-slash: #A0A0A0;
+      }
+  }
+  
+  
+  .definition-item[data-dictionary='大辞泉'] {
+      /* ----------- */
+      /* -- Fonts -- */
+      /* ----------- */
+      div[data-sc-headertitle],
+      div[data-sc-header-title],
+      span[data-sc-headword][data-sc見出],
+      span[data-sc-hhyphen],
+      span[data-sc-l4],
+      span[data-sc-rect],
+      span[data-sc-circle],
+      span[data-sc補足ロゴ-g],
+      span[data-sc季語-m],
+      span[data-sc-bold],
+      span[data-sc常外音訓-m],
+      span[data-sc常外-m],
+      span[data-sc付表有-m],
+      span[data-sc付表無-m] {
+          font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴシック";
+      }
+  
+      div[data-sc-contents],
+      span[data-sc季語],
+      span[data-sc歌枕-m] {
+          font-family: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN";
+      }
+  
+      span[data-sc-italic] {
+          font-family: Georgia;
+      }
+  
+      span[data-sc-gaiji][data-sc-keigashira] {
+          font-family: "Heiti TC";
+      }
+  
+      /* ----------------------- */
+      /* -- Optional settings -- */
+      /* ----------------------- */
+  
+      /* Uncomment to show the 類語 section with links to other entries (Hidden by default)*/
+      /*
+      div[data-sc-meaning][data-sc-c][data-sc-class="C"]:has(span[data-sc-href="$c-ruigo"]),
+      div[data-sc-meaning][data-sc-c][data-sc-class="C"]:has(span[data-sc-href="$c-ssgo"]) {
+          display: block;
+      }
+      */
+  
+      /* Uncomment to show the Pitch accent element (Hidden by default)*/
+      /*
+      div[data-sc-m-accent-audio-g] {
+          display: block;
+      }
+      */
+  }
+
+/* Smooth Jitendex */
+
+:root[data-theme="dark"] {
+  /* Ensure that 'example-sentence-a' stays always visible */
+  [data-dictionary='Jitendex.org [2025-03-04]'] .gloss-sc-div[data-sc-content="example-sentence-a"] {
+    color: white;
+  }
+}
+
+:root[data-theme="light"] {
+  /* Ensure that 'example-sentence-a' stays always visible */
+  [data-dictionary='Jitendex.org [2025-03-04]'] .gloss-sc-div[data-sc-content="example-sentence-a"] {
+    color: black;
+  }
+}
+
+/* Make the definition invisible by default */
+[data-dictionary='Jitendex.org [2025-03-04]'] .gloss-sc-li {
+  color: transparent !important;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Show the definition in normal color on hover */
+[data-dictionary='Jitendex.org [2025-03-04]'] .gloss-sc-li:hover {
+  color: inherit !important;
+}
+
+/* Example sentence invisible by default */
+[data-dictionary='Jitendex.org [2025-03-04]'] .gloss-sc-div[data-sc-content="example-sentence-b"] {
+  color: transparent !important;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Show the example invisible */
+[data-dictionary='Jitendex.org [2025-03-04]'] .gloss-sc-div:hover[data-sc-content="example-sentence-b"] {
+  color: inherit !important;
+  transition: color 0.3s ease-in-out;
+}
+
+/* ----------------------- */
+/* -- Dark mode colours -- */
+/* ----------------------- */
+:root[data-theme="dark"] {
+    .definition-item[data-dictionary='三省堂 全訳読解古語辞典'] {
+        --skogo-black: #DDDDDD;
+        --skogo-white: #000000;
+        --skogo-blue: #00AAFF;
+        --skogo-red: #FF6666;
+        --skogo-light-red: #A54447;
+        --skogo-extra-light-red: #481D1E;
+        --skogo-hinshi-mark: #CCCCCC;
+        --skogo-shubetsu-mark: #CCCCCC;
+        --skogo-gendai-mark: #CCCCCC;
+    }
+}
+
+:root[data-theme="dark"] {
+    .definition-item[data-dictionary='現代心理学辞典'] {
+        --ydp-black: #CCCCCC;
+        --ydp-image-background: #333333;
+        --ydp-blue: #00AAFF;
+
+	    [data-sc-img][data-sc-class="数式"] .gloss-image {
+			-webkit-filter: invert(100%);
+			filter: invert(100%);
+		}
+    }
+}
+
+.definition-item[data-dictionary='現代心理学辞典'] {
+    [data-sc-body],
+    rt,
+    span[data-sc-ref_group] span[data-sc-ref],
+    span[data-sc-ref_items] span[data-sc-ref] {
+        font-family: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN";
+    }
+
+    span[data-sc-em],
+    div[data-sc-entryrefs],
+    span[data-sc-headword][data-sc見出],
+    span[data-sc-ref_group] {
+        font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴシック";
+    }
+
+    span[data-sc-i],
+    span[data-sc-headword][data-sc英語],
+    span[data-sc-headword][data-sc独語],
+    span[data-sc-headword][data-sc仏語] {
+        font-family: "Times New Roman";  
+    }
+
+    div[data-sc-image_caption] {
+       font-family: "Hiragino Kaku Gothic ProN";
+    }
+
+    span[data-sc-lang] {
+        font-family: "Helvetica Neue";
+    }
+}
+
+/* Fonts for 南山堂医学大辞典 第20版 */
+.definition-item[data-dictionary="南山堂医学大辞典 第20版"] {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", serif;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-body] {
+    color: #e0e0e0;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] span[data-sc-gaiji_img] .gloss-image {
+       -webkit-filter: invert(90%);
+       filter: invert(90%);
+}
+
+.definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-midashi_hyoki] {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", serif;
+    font-weight: bold;
+}
+
+.definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-midashi_yomi] {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", serif;
+}
+
+.definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-gaikokugo_title],
+.definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-dougigo_title],
+.definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-image-mark1],
+.definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-image-mark5] {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    font-weight: bold;
+}
+
+.definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-image-mark2] {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    font-weight: bold;
+}
+
+.definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-lang]>.gloss-sc-span:not([data-sc-image-mark2]) {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-dougigo-h] {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-exp] {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", serif;
+}
+
+@media (max-width: 500px) {
+	span[data-sc-scale-image] .gloss-image-link {
+		max-width: 75% !important;
+	}
+}
+
+/* Dark mode 南山堂医学大辞典 第20版 */
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] {
+    color: #e0e0e0;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-midashi] {
+    border-bottom-color: #555;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-midashi]::after {
+    background-color: #d66;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-midashi_hyoki] {
+    color: #d66;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-midashi_yomi] {
+    color: #aaa;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-gaikokugo_layer],
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-dougigo_layer] {
+    border-left-color: #555;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-gaikokugo_title],
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-dougigo_title],
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-image-mark1],
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-image-mark5] {
+    color: #aaa;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-image-mark2] {
+    color: #d66;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] [data-sc-dougigo-h] {
+    color: #9aacbf;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] a {
+    color: #9aacbf;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] a:hover {
+    color: #d66;
+}
+
+:root[data-theme="dark"] .definition-item[data-dictionary="南山堂医学大辞典 第20版"] .gloss-image-container {
+    border-color: #555;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-average-frequency="true"] [data-section-type="frequencies"]:hover .frequency-group-item:not([data-details="Average"]) {
+    display: inline;
+}
+
+/*Bint's compact display */
+html[data-glossary-layout-mode="compact"] {
+    .definition-item[data-dictionary="有斐閣法律用語辞典 第５版"] {
+        [data-sc項目表示],
+        [data-sc項目],
+        [data-sc本文データ],
+        [data-sc-entry] {
+            display: inline;
+        }
+    }
+
+    .definition-item[data-dictionary="角川新字源 改訂新版"] {
+        [data-sc-jukugohead] {
+            display: inline;
+            font-size: 1.25em;
+        }
+    }
+
+    .definition-item[data-dictionary="大辞泉 第二版"] {
+        [data-sc見出-g],
+        [data-sc-contents] {
+            display: inline;
+        }
+    }
+
+    .definition-item[data-dictionary="明鏡国語辞典 第三版"] {
+        [data-sc-head],
+        [data-sc-head2],
+        [data-sc-xmlns] {
+            display: inline;
+        }
+    }
+
+    .definition-item[data-dictionary="旺文社 全訳古語辞典"] {
+        [data-sc見出],
+        [data-sc見出-g],
+        [data-sc-head-g] {
+            display: inline;
+        }
+    }
+
+    .definition-item[data-dictionary="三省堂 全訳読解古語辞典"] {
+        [data-sc見出部],
+        [data-sc項目] {
+            display: inline;
+        }
+    }
+
+    .definition-item[data-dictionary="有斐閣現代心理学辞典"],
+    .definition-item[data-dictionary="現代心理学辞典"] {
+        [data-sc-head2],
+        [data-sc-xmlns] {
+            display: inline;
+        }
+
+        [data-sc-headword][data-sc見出] {
+            font-size: 1em;
+        }
+    }
+
+    .definition-item[data-dictionary="南山堂医学大辞典 第20版"] {
+        [data-sc-midashi],
+        [data-sc-midashi_hyoki],
+        [data-sc-midashi_yomi] {
+            display: inline;
+        }
+
+        [data-sc-midashi]::after {
+            background-color: transparent !important;
+        }
+    }
+}
+
+:root[data-theme="dark"] {
+    .definition-item[data-dictionary='旺文社国語辞典 第十二版'] {
+        --oko12-red: #FF3333;
+        --oko12-light-red: #993333;
+
+        [data-sc-img][data-sc-gaiji] .gloss-image,
+        [data-sc-img][data-sc-gaiji] .gloss-image {
+            -webkit-filter: invert(87%) !important;
+            filter: invert(87%) !important; 
+        }
+    }
+}
+
+.definition-item[data-dictionary='旺文社国語辞典 第十二版'] {
+    --oko12-red: #FF3333;
+    --oko12-light-red: #FFCCCC;
+
+    [data-sc-img][data-sc-gaiji] .gloss-image,
+    [data-sc-img][data-sc-gaiji] .gloss-image {
+        -webkit-filter: invert(87%) !important;
+        filter: invert(87%) !important; 
+    }
+}
+
+html[data-glossary-layout-mode="compact"] {
+    .definition-item[data-dictionary='旺文社国語辞典 第十二版'] {
+        [data-sc標準],
+        [data-sc-head2],
+        [data-sc-head2]>div {
+            display: inline;
+        }
+    }
+}
+
+[data-sc-body],
+[data-sc-ws] {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", "IPAMincho";
+}
+
+[data-sc-bg],
+[data-sc-bs],
+[data-sc-p-o-s],
+[data-sc-headword][data-sc慣用],
+[data-sc-headword][data-sc和歌],
+[data-sc-headword][data-sc-a-b-c],
+[data-sc-kigo],
+[data-sc-logo],
+[data-sc-logo][data-sc配当学年],
+[data-sc-logo][data-sc読み],
+[data-sc-maru],
+[data-sc-num],
+[data-sc-subnum],
+[data-sc-gred],
+th,
+[data-sc-column][data-sc使い分け] [data-sc-title2],
+[data-sc-column][data-scちがい] [data-sc-title2],
+[data-sc-column][data-sc下接語] [data-sc-title2],
+[data-sc-ws] {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", "IPAMincho";
+}
+
+/* ========================= */
+/* === 例解学習国語 第十二版 === */
+/* ========================= */
+:root[data-theme="dark"] .definition-item[data-dictionary='小学館 例解学習国語 第十二版'] {
+	--rgko12-blue: #54b5e4;
+	--rgko12-light-blue: #7dc9ef;
+	--rgko12-light-light-blue: #003366;
+	--rgko12-light-light-purple: #330033;
+	--rgko12-light-orange: #663300;
+	--rgko12-red: #d65252;
+	--rgko12-green: #389938;
+	--rgko12-gray: #CCCCCC;
+	--rgko12-brown: #885522;
+	--rgko12-light-brown: #887766;
+	--rgko12-light-light-brown: #AA9988;
+	--rgko12-cream: #333300;
+	--rgko12-link: #33CCFF;
+}
+
+.definition-item[data-dictionary='小学館 例解学習国語 第十二版'] {
+	--rgko12-blue: #4a8ade;
+	/* var(--rgko12-blue, var(--accent-color, var(--shadow-focus, #4a8ade))) */
+	--rgko12-light-blue: #7fb4f3;
+	/* var(--rgko12-light-blue, var(--accent-color-lighter, var(--button-primary-disabled, #7fb4f3))) */
+	--rgko12-light-light-blue: #DDEEFF;
+	/* var(--rgko12-light-light-blue, var(--accent-color-lightest, var(--button-bg, #DDEEFF))) */
+	--rgko12-light-light-purple: #EEDDFF;
+	/* var(--rgko12-light-light-purple, var(--advanced-color-lighter, var(--canvas-elevated, #EEDDFF))) */
+	--rgko12-red: #e84a4a;
+	/* var(--rgko12-red, var(--sidebar-button-danger-background-color-hover, var(--flag-1, #e84a4a))) */
+	--rgko12-green: #109a2f;
+	/* var(--rgko12-green, var(--tag-frequency-background-color, var(--state-review, #109a2f))) */
+	--rgko12-orange: #FF9900;
+	/* var(--rgko12-orange, var(--tag-expression-background-color, var(--state-buried, #FF9900))) */
+	--rgko12-light-orange: #FFCC99;
+	/* var(--rgko12-light-orange, var(--tag-expression-background-color, var(--state-buried, #FFCC99))) */
+	--rgko12-pink: #FF0099;
+	/* var(--rgko12-pink, var(--tag-dictionary-background-color, var(--flag-5, #FF0099))) */
+	--rgko12-gray: #666666;
+	/* var(--rgko12-gray, var(--tag-default-background-color, var(--border, #666666))) */
+	--rgko12-brown: #976B33;
+	/* var(--rgko12-brown, var(--tag-part-of-speech-background-color, var(--shadow-inset, #976B33))) */
+	--rgko12-light-brown: #DDCCBB;
+	/* var(--rgko12-light-brown, var(--light-border-color, var(---button-bg, #DDCCBB))) */
+	--rgko12-light-light-brown: #FFEEDD;
+	/* var(--rgko12-light-light-brown, var(--tag-text-color, var(--canvas-elevated, #FFEEDD))) */
+	--rgko12-spring: #DDFFEE;
+	/* var(--rgko12-spring, var(--tag-text-color, var(--canvas-elevated, #DDFFEE))) */
+	--rgko12-summer: #DDFFEE;
+	/* var(--rgko12-summer, var(--tag-text-color, var(--canvas-elevated, #DDFFEE))) */
+	--rgko12-autumn: #FFEECC;
+	/* var(--rgko12-autumn, var(--tag-text-color, var(--canvas-elevated, #FFEECC))) */
+	--rgko12-winter: #CCEEFF;
+	/* var(--rgko12-winter, var(--tag-text-color, var(--canvas-elevated, #CCEEFF))) */
+	--rgko12-travel: #DDFFEE;
+	/* var(--rgko12-travel, var(--tag-text-color, var(--canvas-elevated, #DDFFEE))) */
+	--rgko12-romance: #EEDDFF;
+	/* var(--rgko12-romance, var(--tag-text-color, var(--canvas-elevated, #EEDDFF))) */
+	--rgko12-other: #FFFFCC;
+	/* var(--rgko12-other, var(--tag-text-color, var(--canvas-elevated, #FFFFCC))) */
+	--rgko12-cream: #FFFFDD;
+	/* var(--rgko12-cream, var(--tag-text-color, var(--canvas-elevated, #FFFFDD))) */
+	--rgko12-link: #3333CC;
+	/* var(--rgko12-link, var(--accent-color, var(--link-color, #3333CC))) */
+
+
+	[data-sc-body],
+	[data-sc-acc],
+	[data-sc-headword],
+	[data-sc-headword]>[data-sc-em],
+	[data-sc-headword] rt,
+	[data-sc-rank_num],
+	[data-sc使い分け],
+	[data-sc-paren],
+	[data-sc-ws],
+	[data-sc-bs],
+	[data-sc-wc],
+	[data-sc-bc],
+	[data-scコラム],
+	[data-sc-num],
+	[data-sc付録] [data-sc-id="この辞典の使い方"] [data-sc-em],
+	[data-sc付録] [data-sc-id="この辞典の使い方"] [data-sc-b],
+	[data-sc付録] [data-sc-h1],
+	[data-sc付録] [data-sc-h2],
+	[data-sc付録] [data-sc-combi] {
+		font-family: "Klee One", Hiragino Sans";
+	}
+
+	[data-sc-dic_item][data-scコラム],
+	[data-sc-headword][data-sc標準表記],
+	[data-sc-headword][data-sc参考表記],
+	[data-sc-meaning][data-scコラム],
+	[data-sc教科書] {
+		font-family: "Klee One", G-OTF 教科書ICA Pro", "OT-Jo Kyoukasho ICA ProN", "UDDigiKyokasho ProN", "Hiragino Mincho ProN", "G-OTF Kyoukasho ICA Pro R", "G-OTF Kyoukasho ICA Pro L", "G-OTF Kyoukasho ICA Pro M";
+	}
+
+	[data-sc-headword][data-sc原綴],
+	[data-sc単位] {
+		font-family: "Klee One", Source Sans Pro", "Source Han Sans JP", "Hiragino Kaku Gothic ProN";
+	}
+
+	[data-sc付録] td[data-sc符号],
+	[data-sc活字],
+	[data-sc付録] [data-sc-mincho] {
+		font-family: "Klee One", Hiragino Mincho ProN";
+	}
+}
+
+html[data-glossary-layout-mode="compact"] {
+	.definition-item[data-dictionary="小学館 例解学習国語 第十二版"] {
+
+		[data-sc-xmlns],
+		[data-sc-head2] {
+			display: inline;
+		}
+	}
+}
+
+.definition-item[data-dictionary='小学館 例解学習国語 第十二版']:has(.gloss-image, .gloss-image-link) {
+
+	/* 1) Full-height, right-aligned button */
+	.expansion-button {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 1.4em;
+		align-items: center;
+		z-index: 10;
+	}
+
+	/* 2) Add right padding to content so text wraps before hitting the button */
+	.definition-item-inner.collapsible .definition-item-content {
+		padding-right: 2em;
+		box-sizing: border-box;
+	}
+}
+
+    /* Uncomment this to disable furigana */
+   .definition-item[data-dictionary='小学館 例解学習国語 第十二版'] rt {
+    display: none;
+}
+
+/* Cache uniquement le texte de "Clipboard Monitor" */
+.search-option-label {
+display: none;
+}
+
+.gloss-sc-span[data-sc-name="ルビ"],
+.gloss-sc-span[data-sc-name="ルビG"] {
+  display: none !important;
+}
