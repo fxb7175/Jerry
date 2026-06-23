@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="1120" viewBox="0 0 820 1120">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Noto Sans CJK JP, Noto Sans JP, Hiragino Sans, Yu Gothic, Meiryo, sans-serif; fill:#000} .label{font-size:14px;font-weight:700;letter-spacing:2px} .term{font-size:54px;font-weight:700} .reading{font-size:27px} .body{font-size:22px} .small{font-size:18px}</style>
+<text x="410" y="24" text-anchor="middle" class="small">日语词汇.apkg · 反面预览</text>
+<rect x="22" y="35" width="776" height="140" fill="white" stroke="black" stroke-width="2"/>
+<text x="42" y="63" class="label">Vocabulary</text>
+<line x1="42" y1="71" x2="778" y2="71" stroke="black" stroke-width="1"/>
+<text x="410" y="110" text-anchor="middle" class="term">歪む</text>
+<text x="410" y="158" text-anchor="middle" class="reading">ゆがむ</text>
+<rect x="22" y="191" width="776" height="130" fill="white" stroke="black" stroke-width="2"/>
+<text x="42" y="219" class="label">Example sentence</text>
+<line x1="42" y1="227" x2="778" y2="227" stroke="black" stroke-width="1"/>
+<text x="45" y="266" class="body">爆風で窓枠が歪む。</text>
+<text x="45" y="296" class="body">爆炸冲击波把窗框都刮弯了。</text>
+<rect x="22" y="337" width="776" height="190" fill="white" stroke="black" stroke-width="2"/>
+<text x="42" y="365" class="label">Main definition</text>
+<line x1="42" y1="373" x2="778" y2="373" stroke="black" stroke-width="1"/>
+<text x="45" y="412" class="body">① ねじれたり曲がったりして物の形が正しくなくなる。</text>
+<text x="45" y="442" class="body">因为歪斜、歪曲，没有了东西本来的形状。</text>
+<text x="45" y="472" class="body">② 考え方や行いが正しくなくなる。</text>
+<text x="45" y="502" class="body">想法或行为变得不正。</text>
+<rect x="22" y="543" width="776" height="130" fill="white" stroke="black" stroke-width="2"/>
+<text x="42" y="571" class="label">Detailed explanations</text>
+<line x1="42" y1="579" x2="778" y2="579" stroke="black" stroke-width="1"/>
+<text x="45" y="618" class="body">每个词典解释以黑色左边框和浅灰底分块显示。</text>
+<text x="45" y="648" class="body">去掉复杂颜色，链接保留下划线，图片转为灰度高对比。</text>
+</svg>

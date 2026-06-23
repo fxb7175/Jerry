@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="1120" viewBox="0 0 820 1120">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Noto Sans CJK JP, Noto Sans JP, Hiragino Sans, Yu Gothic, Meiryo, sans-serif; fill:#000} .label{font-size:14px;font-weight:700;letter-spacing:2px} .term{font-size:54px;font-weight:700} .reading{font-size:27px} .body{font-size:22px} .small{font-size:18px}</style>
+<text x="410" y="24" text-anchor="middle" class="small">日语词汇.apkg · 正面预览</text>
+<rect x="22" y="35" width="776" height="140" fill="white" stroke="black" stroke-width="2"/>
+<text x="42" y="63" class="label">Vocabulary</text>
+<line x1="42" y1="71" x2="778" y2="71" stroke="black" stroke-width="1"/>
+<text x="410" y="110" text-anchor="middle" class="term">歪む</text>
+<text x="410" y="158" text-anchor="middle" class="reading">ゆがむ</text>
+<rect x="22" y="191" width="776" height="100" fill="white" stroke="black" stroke-width="2"/>
+<text x="42" y="219" class="label">Hint</text>
+<line x1="42" y1="227" x2="778" y2="227" stroke="black" stroke-width="1"/>
+<text x="45" y="266" class="body">黑白高对比；正面只突出词条、读音和必要提示，适合墨水屏。</text>
+</svg>
