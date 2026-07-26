@@ -1,0 +1,28 @@
+name: ChatGPT p7zip Bootstrap
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Install and package p7zip
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y p7zip-full
+          mkdir -p bundle/bin bundle/lib
+          cp -a /usr/bin/7z /usr/bin/7za bundle/bin/
+          cp -a /usr/lib/p7zip/* bundle/lib/
+          tar -C bundle -czf p7zip-linux-x64.tar.gz .
+      - name: Upload bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: p7zip-linux-x64
+          path: p7zip-linux-x64.tar.gz
+          retention-days: 1
