@@ -1,0 +1,41 @@
+name: ChatGPT Vosk Bootstrap
+
+on:
+  push:
+    branches:
+      - chatgpt-vosk-bootstrap-20260726
+  workflow_dispatch:
+
+jobs:
+  build-model-bundle:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Download Japanese Vosk model
+        run: |
+          set -euxo pipefail
+          mkdir -p bundle
+          curl -L --retry 5 --retry-delay 3 \
+            -o bundle/vosk-model-small-ja-0.22.zip \
+            https://alphacephei.com/vosk/models/vosk-model-small-ja-0.22.zip
+          python - <<'PY'
+          import hashlib, pathlib
+          p = pathlib.Path('bundle/vosk-model-small-ja-0.22.zip')
+          print(p.stat().st_size)
+          print(hashlib.sha256(p.read_bytes()).hexdigest())
+          PY
+
+      - name: Download Vosk Linux runtime
+        run: |
+          set -euxo pipefail
+          curl -L --retry 5 --retry-delay 3 \
+            -o bundle/vosk-linux-x86_64-0.3.45.zip \
+            https://github.com/alphacep/vosk-api/releases/download/v0.3.45/vosk-linux-x86_64-0.3.45.zip
+
+      - name: Upload bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: vosk-ja-linux-bundle
+          path: bundle/*
+          retention-days: 1
