@@ -16,15 +16,10 @@ jobs:
           set -euxo pipefail
           sudo apt-get update
           sudo apt-get install -y p7zip-full 7zip
-          mkdir -p bundle
-          for cmd in 7zz 7z 7za; do
-            path="$(command -v "$cmd" || true)"
-            if [ -n "$path" ]; then
-              cp -L "$path" "bundle/$cmd"
-            fi
-          done
-          ls -lah bundle
-          file bundle/*
+          mkdir -p bundle/bin bundle/lib
+          cp -a /usr/bin/7z /usr/bin/7za bundle/bin/
+          cp -a /usr/lib/7zip bundle/lib/
+          find bundle -maxdepth 3 -type f -exec ls -lh {} \;
           tar -C bundle -czf p7zip-linux-x64.tar.gz .
       - name: Upload bundle
         uses: actions/upload-artifact@v4
